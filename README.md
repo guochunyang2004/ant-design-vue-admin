@@ -37,9 +37,12 @@ cnpm i babel-plugin-import
 
 cnpm install echarts --save
 cnpm install resize-detector --save
-//补充：
+cnpm i axios --save
+## 可以选
 cnpm i @ant-design/icons-vue
 npm install --save @ant-design/icons-vue
+
+
 
 vscode 扩展：Ant design vue helper
 # 配置
@@ -75,3 +78,40 @@ git push origin 版本号
 ## npm 删除模块
 【npm uninstall xxx】删除xxx模块；
 【npm uninstall -g xxx】删除全局模块xxx；
+
+
+# nodejs 环境配置
+// 1. 安装node http://nodejs.cn/download/
+// 2. 初始化 npm init
+// 3. 安装依赖 npm i --save express
+// 4. 创建app.js（copy下述代码）
+// 5. 运行命令：node app
+
+// app.js
+const express = require("express");
+const app = express();
+
+// 设置跨域访问
+app.all("*", (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+  res.header("X-Powered-By", " 3.2.1");
+  res.header("Content-Type", "application/json;charset=utf-8");
+  next();
+});
+
+let resData = [10, 20, 30, 40, 50, 60];
+
+// 接口配置
+app.get("/api/dashboard/chart", (req, res) => {
+  res.status(200), res.json(resData);
+});
+
+// 配置服务端
+let server = app.listen(3000, () => {
+  let host = server.address().address;
+  let port = server.address().port;
+
+  console.log("Server running at http://%s:%s", host, port);
+});

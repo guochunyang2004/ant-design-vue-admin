@@ -5,15 +5,36 @@
 </template>
 
 <script>
-import random from 'lodash/random';
+//import random from 'lodash/random';
 import Chart from '../../components/Chart'
+import axios from 'axios';
 export default {
   components: {
     Chart
   },
   data() {
     return {
-      chartOption: {
+      chartOption: {}
+    }
+  },
+  mounted() {
+    this.getChartData()
+    // this.interval = setInterval(()=>{
+    //   this.chartOption.series[0].data = this.chartOption.series[0].data.map(
+    //     () => random(100)
+    //   );
+    //   this.chartOption = {...this.chartOption};//代替深度监听
+    // },3000);
+    this.interval = setInterval(() =>{
+      this.getChartData();
+    }, 3000);
+  },
+  methods: {
+    getChartData() {
+      //console.log('getChartData')
+      axios.get('/api/dashboard/chart', {params: {ID: 12345}})
+        .then(response => {
+          this.chartOption = {
             title: {
                 text: 'ECharts 入门示例'
             },
@@ -25,18 +46,11 @@ export default {
             series: [{
                 name: '销量',
                 type: 'bar',
-                data: [5, 20, 36, 10, 10, 20]
+                data: response.data //[5, 20, 36, 10, 10, 20]
             }]
-        }
+          }
+        })
     }
-  },
-  mounted() {
-    this.interval = setInterval(()=>{
-      this.chartOption.series[0].data = this.chartOption.series[0].data.map(
-        () => random(100)
-      );
-      this.chartOption = {...this.chartOption};//代替深度监听
-    },3000);
   },
   beforeDestroy() {
     clearInterval(this.interval)
