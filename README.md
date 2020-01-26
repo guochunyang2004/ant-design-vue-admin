@@ -93,6 +93,11 @@ package.json中的scripts加：
       "serve:no-mock": "cross-env MOCK=none vue-cli-service serve",
 
 * windows需安装开发插件"cross-env"
+
+# 重点模块
+* vuex 
+  store/modules/form.js
+
 # nodejs 环境配置
 ···
     // 1. 安装node http://nodejs.cn/download/
