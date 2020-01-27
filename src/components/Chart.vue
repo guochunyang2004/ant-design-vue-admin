@@ -3,7 +3,11 @@
 </template>
 
 <script>
-import echarts from "echarts";
+//下面三行echarts按需加载
+import echarts from "echarts/lib/echarts";
+import 'echarts/lib/chart/bar';
+import 'echarts/lib/component/title';
+
 import debounce from 'lodash/debounce';
 import { addListener, removeListener } from "resize-detector";
 export default {

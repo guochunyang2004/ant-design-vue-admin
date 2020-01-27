@@ -30,6 +30,9 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+### 生成打包报告
+
+    npm run build -- --report
 
 # 引用插件
     cnpm i antd  --save
@@ -46,11 +49,26 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
     //jsx插件 https://github.com/vuejs/jsx
     cnpm install @vue/babel-preset-jsx @vue/babel-helper-vue-jsx-merge-props
+    //svg组件
+   #此方法安装失败，尝试先卸载再安装，卸载命令：cnpm uninstall vue-svg-loader
+   
+   //多语言组件
+   cnpm install vue-i18n --save
+   
+  // 
+  cnpm install query-string --save
 
+    cnpm install vue-svg-loader vue-template-compiler --save-dev
+
+    cnpm install antd-theme-webpack-plugin --save-dev
 ## 开发插件
     cnpm i --save-dev cross-env
 
     vscode 扩展：Ant design vue helper
+
+## 社区皮肤插件
+      https://github.com/mzohaibqc/antd-theme-webpack-plugin
+
 # 配置
     开启 JavaScript 就可以了
     {
@@ -60,6 +78,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
       }
     }
 
+* cli配置导出命名
+    vue inspect > output.js
 
 # Git 常用操作
 ## 打标签

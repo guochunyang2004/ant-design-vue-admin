@@ -21,8 +21,10 @@
 export default {
   props: ['menuInfo'],
   watch: {
+    //禁止eslint提醒标记
+    // eslint-disable-next-line no-unused-vars
     'menuInfo.path':function(val) {
-      console.log(val);
+      //console.log(val);
     }
   }
 };

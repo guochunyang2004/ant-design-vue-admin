@@ -1,6 +1,6 @@
 <template>
   <div :class="[`nav-theme-${navTheme}`, 'nav-layout-${navLayout}']">
-    <a-layout id="components-layout-demo-side" style="min-height: 100vh">
+    <a-layout class="components-layout-demo-side" style="min-height: 100vh">
       <a-layout-sider 
         v-if="navLayout === 'left'"
         :theme="navTheme" 
@@ -64,6 +64,10 @@ export default {
 </script>
 
 <style scoped>
+/* 自定义样式 利用深度选择器 */
+/* .components-layout-demo-side >>> .ant-menu-dark .ant-menu-item-selected {
+  color: #000;
+} */
 .trigger {
   padding: 0 24px;
   line-height: 64px;
