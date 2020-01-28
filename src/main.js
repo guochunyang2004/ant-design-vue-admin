@@ -15,6 +15,8 @@ import { Button, Layout, Icon, Drawer, Radio, Menu,
 import Authorized from './components/Authorized'
 //import "ant-design-vue/lib/button/style"
 import Auth from './components/directives/auth'
+import VueHighlightJS from 'vue-highlightjs'
+import 'highlight.js/styles/github.css';
 
 Vue.config.productionTip = false;
 
@@ -33,6 +35,8 @@ Vue.use(DatePicker);
 Vue.component('Authorized', Authorized);
 Vue.use(Auth);
 Vue.use(VueI18n);
+Vue.use(VueHighlightJS);//vue 代码高亮
+
 
 const i18n = new VueI18n({
   locale: queryString.parse(location.search).locale || "zhCN",

@@ -37,12 +37,12 @@ module.exports = {
             // Ignore all locale files of moment.js 按需加载，全局：import 'moment/locale/zh-cn';
             new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/) 
         ],
-        //下面按需加载图标
-        resolve: {
-            alias: {
-                "@ant-design/icons/lib/dist$": path.resolve(__dirname, "./src/icons.js")
-            }
-        }
+        //下面按需加载图标，具体在icons.js配置
+        // resolve: {
+        //     alias: {
+        //         "@ant-design/icons/lib/dist$": path.resolve(__dirname, "./src/icons.js")
+        //     }
+        // }
      },
 
     //内联svg

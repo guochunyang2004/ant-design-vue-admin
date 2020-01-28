@@ -34,6 +34,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
     npm run build -- --report
 
+### 单元测试命名 监视更新
+
+    npm run test:unit -- --watch
+
 # 引用插件
     cnpm i antd  --save
     cnpm i nprogress  --save
@@ -66,8 +70,31 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
     vscode 扩展：Ant design vue helper
 
+## 显示源码插件
+      安装：cnpm i raw-loader --save-dev
+      https://github.com/webpack-contrib/raw-loader
+## vue 代码高亮插件
+      安装：cnpm install --save vue-highlightjs
+      https://github.com/metachris/vue-highlightjs
+      https://highlightjs.org/
 ## 社区皮肤插件
       https://github.com/mzohaibqc/antd-theme-webpack-plugin
+
+## npm 源切换
+      https://github.com/Pana/nrm
+      # 安装
+      npm install -g nrm
+      # 列表
+      nrm ls
+      * npm -----  https://registry.npmjs.org/
+        yarn ----- https://registry.yarnpkg.com
+        cnpm ----  http://r.cnpmjs.org/
+        taobao --  https://registry.npm.taobao.org/
+        nj ------  https://registry.nodejitsu.com/
+        skimdb -- https://skimdb.npmjs.com/registry
+      # 切换源
+      nrm use cnpm  //switch registry to cnpm
+      Registry has been set to: http://r.cnpmjs.org/
 
 # 配置
     开启 JavaScript 就可以了
@@ -80,6 +107,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 * cli配置导出命名
     vue inspect > output.js
+
+# 常用 loader 
+* vue-loader
+* babel-loader
+* vue-antd-md-loader
 
 # Git 常用操作
 ## 打标签
